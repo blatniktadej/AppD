@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NgxGalleryAnimation, NgxGalleryImage, NgxGalleryOptions } from '@kolkov/ngx-gallery';
+import { of } from 'rxjs';
 import { Member } from 'src/app/_models/member';
 import { MembersService } from 'src/app/_services/members.service';
 
@@ -26,8 +27,11 @@ export class MemberDetailComponent implements OnInit {
         imagePercent: 100,
         thumbnailsColumns: 4,
         imageAnimation: NgxGalleryAnimation.Slide,
-        preview: false
+        preview: false,
+        
+      
       }
+      
     ]
   }
 
@@ -37,9 +41,11 @@ export class MemberDetailComponent implements OnInit {
       imageUrls.push({
         small: photo?.url,
         medium: photo?.url,
-        big: photo?.url
+        big: photo?.url,
       })
+     
     }
+    
     return imageUrls;
   }
 
@@ -51,6 +57,8 @@ export class MemberDetailComponent implements OnInit {
       this.galleryImages=this.getImages();
 
     })
+  
   }
+  
 
 }
