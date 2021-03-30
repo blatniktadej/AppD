@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NgxGalleryAnimation, NgxGalleryImage, NgxGalleryOptions } from '@kolkov/ngx-gallery';
+import { ok } from 'node:assert';
 import { of } from 'rxjs';
 import { Member } from 'src/app/_models/member';
 import { MembersService } from 'src/app/_services/members.service';
@@ -43,7 +44,7 @@ export class MemberDetailComponent implements OnInit {
         medium: photo?.url,
         big: photo?.url,
       })
-     
+    
     }
     
     return imageUrls;
